@@ -3,7 +3,7 @@ import {
   on,
   Action,
   createFeatureSelector,
-  createSelector
+  createSelector,
 } from '@ngrx/store';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
@@ -22,8 +22,18 @@ export const initialState = adapter.getInitialState({
 
 export const usersReducer = createReducer<UsersState>(
   initialState,
-  on(UsersActions.getUsersSuccess, (state, payload) =>
-    adapter.setAll(payload.users, { ...state })
+  on(UsersActions.getUsersSuccess, (state, { users }) =>
+    adapter.setAll(users, state)
+  ),
+  on(UsersActions.setSelectedUserId, (state, { userId }) => ({
+    ...state,
+    selectedUserId: userId,
+  })),
+  on(UsersActions.deleteUser, (state, { userId }) =>
+    adapter.removeOne(userId, state)
+  ),
+  on(UsersActions.updateUser, (state, action) =>
+    adapter.updateOne(action.payload, state)
   )
 );
 
@@ -32,7 +42,3 @@ export const { selectAll } = adapter.getSelectors();
 export function reducer(state: UsersState | undefined, action: Action) {
   return usersReducer(state, action);
 }
-
-export const getUsersState = createFeatureSelector<UsersState>('users');
-
-export const getAllUsers = createSelector(getUsersState, selectAll);

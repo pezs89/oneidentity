@@ -13,7 +13,7 @@ export class UsersEffects {
       concatMap(() =>
         this.usersService
           .getUsers()
-          .pipe(map((users) => UsersActions.getUsersSuccess({ users })))
+          .pipe(map(users => UsersActions.getUsersSuccess({ users })))
       )
     )
   );

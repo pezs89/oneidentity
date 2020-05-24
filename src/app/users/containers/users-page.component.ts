@@ -3,7 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { AppState } from 'src/app/store/app.reducer';
-import * as fromUsers from '../store/users.reducer';
+import * as fromUsers from '../store/users.selectors';
+import * as UsersActions from '../store/users.actions';
 
 import { User } from '../models/user';
 import { Router } from '@angular/router';
@@ -23,6 +24,7 @@ export class UsersPageComponent implements OnInit {
   }
 
   editUser(id: number) {
+    this.store.dispatch(UsersActions.setSelectedUserId({ userId: id }));
     this.router.navigate(['/edit', id]);
   }
 }
