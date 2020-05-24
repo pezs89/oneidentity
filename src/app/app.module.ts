@@ -10,12 +10,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { appReducers } from 'src/app/store/app.reducer';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
     StoreModule.forRoot(appReducers, {
       runtimeChecks: { strictStateImmutability: true },
     }),
@@ -27,6 +32,7 @@ import { appReducers } from 'src/app/store/app.reducer';
       stateKey: 'router',
       routerState: RouterState.Minimal,
     }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

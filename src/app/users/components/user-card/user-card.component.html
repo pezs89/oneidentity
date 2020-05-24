@@ -1,0 +1,22 @@
+<div class="user-card">
+  <div class="user-card__actions">
+    <ng-content></ng-content>
+  </div>
+  <div class="user-card__image">
+    <img src="../../../../assets/placeholder-user.jpg" />
+  </div>
+  <div class="user-card__details">
+    <div class="user-card__name">
+      <h4>{{ user.name }}</h4>
+    </div>
+    <div class="user-card__username">
+      <h5>{{ user.username }}</h5>
+    </div>
+    <div class="user-card__email">
+      <h5>{{ user.email }}</h5>
+    </div>
+    <div class="user-card__website">
+      <h6>{{ user.website }}</h6>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
-<div>
-  Users Page
-  
+<div class="users-page">
+  <app-user-card *ngFor="let user of users$ | async" [user]="user">
+    <app-user-action [icon]="'edit'" (actionClicked)="editUser(user.id)"></app-user-action>
+  </app-user-card>
 </div>

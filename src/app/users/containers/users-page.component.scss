@@ -1,0 +1,10 @@
+.users-page {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 40px 60px;
+  @media (max-width: 767px) {
+      padding: 10px 20px;
+  }
+}
