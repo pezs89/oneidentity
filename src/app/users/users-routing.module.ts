@@ -9,7 +9,6 @@ const routes: Routes = [
   {
     path: '',
     component: UsersPageComponent,
-    resolve: { users: UsersResolver },
   },
   {
     path: 'edit/:id',

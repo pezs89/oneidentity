@@ -11,6 +11,7 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+    resolve: { users: UsersResolver },
   },
   { path: '**', redirectTo: '/users', pathMatch: 'full' },
 ];
