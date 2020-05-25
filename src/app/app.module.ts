@@ -14,6 +14,7 @@ import { appReducers } from 'src/app/store/app.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    CoreModule,
     StoreModule.forRoot(appReducers, {
       runtimeChecks: { strictStateImmutability: true },
     }),

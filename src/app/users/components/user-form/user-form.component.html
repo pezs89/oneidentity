@@ -1,0 +1,79 @@
+<form
+  *ngIf="user"
+  class="user-details__form"
+  [formGroup]="userForm"
+  (ngSubmit)="submitForm()"
+>
+  <app-form-input
+    [label]="'name'"
+    [groupName]="userForm"
+    [controlName]="userForm.get('name')"
+  ></app-form-input>
+  <app-form-input
+    [label]="'username'"
+    [groupName]="userForm"
+    [controlName]="userForm.get('username')"
+  ></app-form-input>
+  <app-form-input
+    [label]="'email'"
+    [groupName]="userForm"
+    [controlName]="userForm.get('email')"
+  ></app-form-input>
+  <app-form-input
+    [label]="'phone'"
+    [groupName]="userForm"
+    [controlName]="userForm.get('phone')"
+  ></app-form-input>
+  <app-form-input
+    [label]="'website'"
+    [groupName]="userForm"
+    [controlName]="userForm.get('website')"
+  ></app-form-input>
+  <ng-container formGroupName="address">
+    <app-form-input
+      [label]="'street'"
+      [groupName]="userForm"
+      [controlName]="addressFieldsGroup.get('street')"
+    ></app-form-input>
+    <app-form-input
+      [label]="'suite'"
+      [groupName]="userForm"
+      [controlName]="addressFieldsGroup.get('suite')"
+    ></app-form-input>
+    <app-form-input
+      [label]="'city'"
+      [groupName]="userForm"
+      [controlName]="addressFieldsGroup.get('city')"
+    ></app-form-input>
+    <app-form-input
+      [label]="'zipcode'"
+      [groupName]="userForm"
+      [controlName]="addressFieldsGroup.get('zipcode')"
+    ></app-form-input>
+  </ng-container>
+  <ng-container formGroupName="company">
+    <app-form-input
+      [label]="'name'"
+      [groupName]="userForm"
+      [controlName]="companyFieldsGroup.get('name')"
+    ></app-form-input>
+    <app-form-input
+      [label]="'catchPhrase'"
+      [groupName]="userForm"
+      [controlName]="companyFieldsGroup.get('catchPhrase')"
+    ></app-form-input>
+    <app-form-input
+      [label]="'bs'"
+      [groupName]="userForm"
+      [controlName]="companyFieldsGroup.get('bs')"
+    ></app-form-input>
+  </ng-container>
+  <div class="user-details__form-actions">
+    <app-button
+      [type]="'button'"
+      (buttonClicked)="onUserDeleteClicked()"
+      [label]="'Delete'"
+    ></app-button>
+    <app-button [type]="'submit'" [label]="'Save'"></app-button>
+  </div>
+</form>

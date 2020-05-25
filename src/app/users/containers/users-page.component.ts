@@ -25,6 +25,6 @@ export class UsersPageComponent implements OnInit {
 
   editUser(id: number) {
     this.store.dispatch(UsersActions.setSelectedUserId({ userId: id }));
-    this.router.navigate(['/edit', id]);
+    this.router.navigate(['/users/edit', id]);
   }
 }

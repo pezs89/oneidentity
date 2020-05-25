@@ -1,10 +1,4 @@
-import {
-  createReducer,
-  on,
-  Action,
-  createFeatureSelector,
-  createSelector,
-} from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
 import * as UsersActions from './users.actions';
