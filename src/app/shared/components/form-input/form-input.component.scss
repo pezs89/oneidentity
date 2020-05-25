@@ -24,8 +24,8 @@ $gray: #9b9b9b;
   transition: border-color 0.2s;
   resize: none;
 
-  &--textara {
-    height: 40px;
+  &--error {
+    border-bottom-color: #a62c23;
   }
 
   &::placeholder {
@@ -46,6 +46,9 @@ $gray: #9b9b9b;
   transition: 0.2s;
   font-size: 1rem;
   color: $gray;
+  &--error {
+    color: #a62c23;
+  }
 }
 
 .form__field:focus {
@@ -64,21 +67,10 @@ $gray: #9b9b9b;
   border-image: linear-gradient(to right, $primary, $secondary);
   border-image-slice: 1;
 }
-/* reset input */
+
 .form__field {
   &:required,
   &:invalid {
     box-shadow: none;
   }
-}
-/* demo */
-body {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color: #222222;
 }

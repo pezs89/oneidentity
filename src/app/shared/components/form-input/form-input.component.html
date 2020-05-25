@@ -6,6 +6,16 @@
     [name]="name"
     [required]="required"
     [formControl]="controlName"
+    [ngClass]="{
+      'form__field--error': controlName?.invalid && controlName?.touched
+    }"
   />
-  <label for="name" class="form__label">{{ label }}</label>
+  <label
+    for="name"
+    class="form__label"
+    [ngClass]="{
+      'form__label--error': controlName?.invalid && controlName?.touched
+    }"
+    >{{ label }}</label
+  >
 </div>
